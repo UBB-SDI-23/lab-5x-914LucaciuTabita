@@ -1,0 +1,17 @@
+<ng-container *ngIf="book">
+    <h3>{{book.title}}</h3>
+    <ul>
+        <li>{{book.genre}}</li>
+        <li>{{book.type}}</li>
+        <li>{{book.description}}</li>
+        <li>{{book.pages}}</li>
+        <ul>
+            <li>{{book.author.id}}</li>
+            <li>{{book.author.name}}</li>
+            <li>{{book.author.email}}</li>
+            <li>{{book.author.biography}}</li>
+            <li>{{book.author.nationality}}</li>
+            <li>{{book.author.birthYear}}</li>
+        </ul>
+    </ul>
+</ng-container>

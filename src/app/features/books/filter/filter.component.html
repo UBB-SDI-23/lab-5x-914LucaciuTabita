@@ -1,0 +1,32 @@
+<form (submit)="onSubmit()">
+  <label><p></p>Author's Name:</label>
+  <input [(ngModel)]="authorname" name="authorname" type="text">
+  <button type="submit">Filter</button>
+  <button (click)="onClear()">Clear</button>
+</form>
+
+<!-- Display filtered books -->
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Pages</th>
+      <th>AuthorId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of filteredBooks; let i = index">
+      <td><a routerLink="/books/{{book.id}}">{{book.id}}</a></td>
+      <td>{{book.title}}</td>
+      <td>{{book.genre}}</td>
+      <td>{{book.type}}</td>
+      <td>{{book.description}}</td>
+      <td>{{book.pages}}</td>
+      <td>{{book.authorId}}</td>
+    </tr>
+  </tbody>
+</table>
