@@ -1,0 +1,33 @@
+<h2>Books</h2>
+<button (click)="goToAdd()">Add book</button>
+
+<br><br>
+
+<button (click)="goToFilter()">Filter</button>
+
+<br><br>
+
+<table matSort (matSortChange)="sortData($event)">
+    <thead>
+        <tr>
+            <th mat-sort-header="id">Id</th>
+            <th mat-sort-header="title">Title</th>
+            <th mat-sort-header="genre">Genre</th>
+            <th mat-sort-header="type">Type</th>
+            <th mat-sort-header="description">Description</th>
+            <th mat-sort-header="pages">Pages</th>
+            <th mat-sort-header="authorId">AuthorId</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books; let i = index">
+            <td><a routerLink="/books/{{book.id}}">{{book.id}}</a></td>
+            <td>{{book.title}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.type}}</td>
+            <td>{{book.description}}</td>
+            <td>{{book.pages}}</td>
+            <td>{{book.authorId}}</td>
+        </tr>
+    </tbody>
+</table>
