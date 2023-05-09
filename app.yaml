@@ -8,6 +8,9 @@ handlers:
     upload: dist/my-app/index.html
   - url: /
     static_dir: dist/my-app
+  - url: /.*
+    script: auto
+    login: "optional"
 
 skip_files:
   - e2e/
