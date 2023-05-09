@@ -42,8 +42,7 @@ export class AuthorsUpdateComponent {
       };
       this.apiSvc.updateAuthor(updateAuthor).subscribe(result => {
         console.log(result);
-        alert('Author succesfully updated!');
-        window.location.href="/authors";
+        this.router.navigate(["/authors"]).then( () => alert('Author successfully updated!'));
       });
     }
   }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/common/service/services.api.service.service';
 import { AddLibraryDTO } from '../component/overview/models/libraries.models';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add',
@@ -13,7 +14,7 @@ export class LibrariesAddComponent {
   address?: string;
   phoneNumber?: string;
   capacity?: string;
-  constructor(private apiSvc: ApiService) {}
+  constructor(private apiSvc: ApiService, private router : Router) {}
   addLibrary(){
     if(this.name && this.city && this.address && this.phoneNumber && this.capacity) {
       const library: AddLibraryDTO = {
@@ -24,8 +25,7 @@ export class LibrariesAddComponent {
         capacity: this.capacity
       }
       this.apiSvc.addLibrary(library).subscribe(result => console.log(result));
-      alert("Library succesfully added");
-      window.location.href="/libraries";
+      this.router.navigate(["/libraries"]).then(() => alert("Library successfully added"));
     }
   }
 }

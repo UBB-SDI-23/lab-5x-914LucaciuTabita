@@ -54,8 +54,7 @@ export class BorrowingsUpdateComponent {
       };
       this.apiSvc.updateBorrowing(updateBorrowing).subscribe(result => {
         console.log(result);
-        alert('Borrowing succesfully updated!');
-        window.location.href="/borrowings";
+        this.router.navigate(["/borrowings"]).then(() => alert("Borrowing successfully updated"));
       });
     }
   }

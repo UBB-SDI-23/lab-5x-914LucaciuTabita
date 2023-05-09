@@ -42,8 +42,7 @@ export class LibrariesUpdateComponent {
       };
       this.apiSvc.updateLibrary(updateLibrary).subscribe(result => {
         console.log(result);
-        alert('Library succesfully updated!');
-        window.location.href="/libraries";
+        this.router.navigate(["/libraries"]).then(() => alert("Library successfully updated"));
       });
     }
   }
