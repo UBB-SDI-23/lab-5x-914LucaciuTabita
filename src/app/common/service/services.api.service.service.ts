@@ -15,7 +15,7 @@ export class ApiService {
   // baseUrl = 'http://javra-env.eba-n7jqtarq.us-east-1.elasticbeanstalk.com'
   // baseUrl = 'http://java-env.eba-ej3asysn.us-east-1.elasticbeanstalk.com'
   // baseUrl = 'http://localhost:5000'
-  baseUrl = 'https://5000-cs-f7bdc13b-ecdb-4e69-88a2-10371a3be6e1.cs-europe-west4-bhnf.cloudshell.de'
+  baseUrl = 'https://5000-cs-f7bdc13b-ecdb-4e69-88a2-10371a3be6e1.cs-europe-west4-bhnf.cloudshell.dev'
   constructor(private http: HttpClient) { }
 
   handleError(error: HttpErrorResponse): Observable<any> {
