@@ -1,7 +1,6 @@
-runtime: custom
+runtime: python27
 api_version: 1
 threadsafe: yes
-env: flex
 
 handlers:
   - url: /
@@ -9,9 +8,6 @@ handlers:
     upload: dist/my-app/index.html
   - url: /
     static_dir: dist/my-app
-  - url: /.*
-    script: auto
-    login: "optional"
 
 skip_files:
   - e2e/
