@@ -12,6 +12,9 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', '--version=prod']
 
-  # running docker-compose
-  - name: 'docker/compose'
-    args: ['up', '-d']
+  # Docker
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west3-docker.pkg.dev/caramel-biplane-386111/docker/app:tag1', '.']
+
+images:
+  - 'europe-west3-docker.pkg.dev/caramel-biplane-386111/docker/app:tag1'
