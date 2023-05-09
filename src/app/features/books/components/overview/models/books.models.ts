@@ -7,7 +7,25 @@ export interface Author {
     birthYear: string;
 }
 
-export interface BookDTO {
+export interface AddAuthorDTO {
+    name: string;
+    email: string;
+    biography: string;
+    nationality: string;
+    birthYear: string;
+}
+
+export interface AuthorWithBooks {
+    id: string;
+    name: string;
+    email: string;
+    biography: string;
+    nationality: string;
+    birthYear: string;
+    books: BookDTO[];
+}
+
+export interface Book {
     id: string;
     title: string;
     genre: string;
@@ -17,7 +35,7 @@ export interface BookDTO {
     author: Author;
 }
 
-export interface Book {
+export interface BookDTO {
     id: string;
     title: string;
     genre: string;

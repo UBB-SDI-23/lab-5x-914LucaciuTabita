@@ -1,0 +1,36 @@
+<ng-container *ngIf="borrowing">
+    <h3>Borrowing for {{borrowing.book.title}} in {{borrowing.library.name}}</h3>
+    <ul><b>Book</b>
+        <li><b>Id: </b>{{borrowing.book.id}}</li>
+        <li><b>Title: </b>{{borrowing.book.title}}</li>
+        <li><b>Genre: </b>{{borrowing.book.genre}}</li>
+        <li><b>Type: </b>{{borrowing.book.type}}</li>
+        <li><b>Description: </b>{{borrowing.book.description}}</li>
+        <li><b>Pages: </b>{{borrowing.book.pages}}</li>
+        <li><b>AuthorId: </b>{{borrowing.book.authorId}}</li>
+        <br>
+        <!-- <ul *ngFor="let borrowing of library.borrowings; let i = index">
+            <li><b>BookId: </b>{{borrowing.bookId}}</li>
+            <li><b>LibraryId: </b>{{borrowing.libraryId}}</li>
+            <li><b>FirstDate: </b>{{borrowing.firstDate}}</li>
+            <li><b>LastDate: </b>{{borrowing.lastDate}}</li>
+            <br>
+        </ul> -->
+    </ul>
+    <ul><b>Library</b>
+        <li><b>Id: </b>{{borrowing.library.id}}</li>
+        <li><b>City: </b>{{borrowing.library.city}}</li>
+        <li><b>Address: </b>{{borrowing.library.address}}</li>
+        <li><b>PhoneNumber: </b>{{borrowing.library.phoneNumber}}</li>
+        <li><b>Capacity: </b>{{borrowing.library.capacity}}</li>
+        <br>
+        <!-- <ul *ngFor="let borrowing of library.borrowings; let i = index">
+            <li><b>BookId: </b>{{borrowing.bookId}}</li>
+            <li><b>LibraryId: </b>{{borrowing.libraryId}}</li>
+            <li><b>FirstDate: </b>{{borrowing.firstDate}}</li>
+            <li><b>LastDate: </b>{{borrowing.lastDate}}</li>
+            <br>
+        </ul> -->
+    </ul>
+    <button (click)="goBack()" >Back</button>
+</ng-container>

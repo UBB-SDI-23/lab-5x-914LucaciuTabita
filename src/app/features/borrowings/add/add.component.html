@@ -1,0 +1,24 @@
+<h2>Add borrowing</h2>
+<form (submit)="addBorrowing()">
+    <label for="bookId">BookId:</label>
+    <input type="number" name="bookId" [(ngModel)]="bookId">
+
+    <br><br>
+
+    <label for="libraryId">LibraryId:</label>
+    <input type="number" name="libraryId" [(ngModel)]="libraryId">
+
+    <br><br>
+
+    <label for="firstDate">FirstDate:</label>
+    <input type="firstDate" name="firstDate" [(ngModel)]="firstDate">
+
+    <br><br>
+
+    <label for="lastDate">LastDate:</label>
+    <input type="lastDate" name="lastDate" [(ngModel)]="lastDate">
+
+    <br><br>
+    
+    <button type="submit">Add</button>
+</form>

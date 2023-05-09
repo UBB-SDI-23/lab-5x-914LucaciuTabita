@@ -1,0 +1,29 @@
+<h2>Borrowings</h2>
+<button (click)="goToAddBorrowing()">Add Borrowing</button>
+<br><br>
+
+<button (click)="goToUpdateBorrowing()">Update Borrowing</button>
+<br><br>
+
+<table matSort (matSortChange)="sortData($event)">
+    <thead>
+        <tr>
+            <th mat-sort-header="bookTitle">Book</th>
+            <th mat-sort-header="libraryName">Library</th>
+            <th mat-sort-header="firstDate">FirstDate</th>
+            <th mat-sort-header="lastDate">LastDate</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let borrowing of borrowings; let i = index" (click)="goToDetails(borrowing.book.id, borrowing.library.id)">
+            <td>{{borrowing.book.title}}</td>
+            <td>{{borrowing.library.name}}</td>
+            <td>{{borrowing.firstDate}}</td>
+            <td>{{borrowing.lastDate}}</td>
+            <td><button type="button" (click)='deleteBorrowing(borrowing.book.id, borrowing.library.id)'>Delete</button></td>
+            <td><button type="button" (click)='updateBorrowing(borrowing.book.id, borrowing.library.id)'>Update</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,17 +1,18 @@
 <ng-container *ngIf="book">
     <h3>{{book.title}}</h3>
     <ul>
-        <li>{{book.genre}}</li>
-        <li>{{book.type}}</li>
-        <li>{{book.description}}</li>
-        <li>{{book.pages}}</li>
+        <li><b>Genre: </b>{{book.genre}}</li>
+        <li><b>Type: </b>{{book.type}}</li>
+        <li><b>Description: </b>{{book.description}}</li>
+        <li><b>Pages: </b>{{book.pages}}</li>
+        <br>
         <ul>
-            <li>{{book.author.id}}</li>
-            <li>{{book.author.name}}</li>
-            <li>{{book.author.email}}</li>
-            <li>{{book.author.biography}}</li>
-            <li>{{book.author.nationality}}</li>
-            <li>{{book.author.birthYear}}</li>
+            <li><b>AuthorId: </b>{{book.author.id}}</li>
+            <li><b>Name: </b>{{book.author.name}}</li>
+            <li><b>Email: </b>{{book.author.email}}</li>
+            <li><b>Biography: </b>{{book.author.biography}}</li>
+            <li><b>Nationality: </b>{{book.author.nationality}}</li>
+            <li><b>BirthYear: </b>{{book.author.birthYear}}</li>
         </ul>
     </ul>
 </ng-container>

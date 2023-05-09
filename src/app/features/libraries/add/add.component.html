@@ -1,0 +1,29 @@
+<h2>Add library</h2>
+<form (submit)="addLibrary()">
+    <label for="name">Name:</label>
+    <input type="name" name="name" [(ngModel)]="name">
+
+    <br><br>
+
+    <label for="city">City:</label>
+    <input type="city" name="city" [(ngModel)]="city">
+
+    <br><br>
+
+    <label for="address">Address:</label>
+    <input type="address" name="address" [(ngModel)]="address">
+
+    <br><br>
+
+    <label for="phoneNumber">PhoneNumber:</label>
+    <input type="text" name="phoneNumber" [(ngModel)]="phoneNumber">
+
+    <br><br>
+
+    <label for="capacity">Capacity:</label>
+    <input type="number" name="capacity" [(ngModel)]="capacity">
+
+    <br><br>
+    
+    <button type="submit">Add</button>
+</form>

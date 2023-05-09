@@ -1,0 +1,33 @@
+<h2>Authors</h2>
+<button (click)="goToAddAuthor()">Add Author</button>
+<br><br>
+
+<button (click)="goToUpdateAuthor()">Update Author</button>
+<br><br>
+
+<table matSort (matSortChange)="sortData($event)">
+    <thead>
+        <tr>
+            <th mat-sort-header="id">Id</th>
+            <th mat-sort-header="name">Name</th>
+            <th mat-sort-header="email">Email</th>
+            <th mat-sort-header="biography">Biography</th>
+            <th mat-sort-header="nationality">Nationality</th>
+            <th mat-sort-header="birthYear">BirthYear</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let author of authors; let i = index">
+            <td><a routerLink="/authors/{{author.id}}">{{author.id}}</a></td>
+            <td>{{author.name}}</td>
+            <td>{{author.email}}</td>
+            <td>{{author.biography}}</td>
+            <td>{{author.nationality}}</td>
+            <td>{{author.birthYear}}</td>
+            <td><button type="button" (click)='deleteAuthor(author.id)'>Delete</button></td>
+            <td><button type="button" (click)='updateAuthor(author.id)'>Update</button></td>
+        </tr>
+    </tbody>
+</table>

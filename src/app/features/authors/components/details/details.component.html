@@ -1,0 +1,32 @@
+<ng-container *ngIf="author">
+    <h3>{{author.name}}</h3>
+    <ul>
+        <li><b>Id: </b>{{author.id}}</li>
+        <li><b>Email: </b>{{author.email}}</li>
+        <li><b>Biography: </b>{{author.biography}}</li>
+        <li><b>Nationality: </b>{{author.nationality}}</li>
+        <li><b>birthYear: </b>{{author.birthYear}}</li>
+        <br>
+        <ul *ngFor="let book of author.books; let i = index">
+            <li><b>Title: </b>{{book.title}}</li>
+            <li><b>Genre: </b>{{book.genre}}</li>
+            <li><b>Type: </b>{{book.type}}</li>
+            <li><b>Description: </b>{{book.description}}</li>
+            <li><b>Pages: </b>{{book.pages}}</li>
+            <br>
+            <!--<li>{{book.authorId}}</li>-->
+        </ul>
+        <!--<li>{{book.genre}}</li>
+        <li>{{book.type}}</li>
+        <li>{{book.description}}</li>
+        <li>{{book.pages}}</li>
+        <ul>
+            <li>{{book.author.id}}</li>
+            <li>{{book.author.name}}</li>
+            <li>{{book.author.email}}</li>
+            <li>{{book.author.biography}}</li>
+            <li>{{book.author.nationality}}</li>
+            <li>{{book.author.birthYear}}</li>
+        </ul>-->
+    </ul>
+</ng-container>

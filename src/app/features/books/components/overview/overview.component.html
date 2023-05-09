@@ -1,11 +1,16 @@
 <h2>Books</h2>
 <button (click)="goToAdd()">Add book</button>
-
 <br><br>
-
 <button (click)="goToFilter()">Filter</button>
-
 <br><br>
+<button (click)="goToUpdate()">Update</button>
+<br><br>
+
+<!--<form (submit)="deleteBook($event)">
+    <label for="id">ID&nbsp;</label>
+    <input type="id" name="id" [(ngModel)]="id">
+    <button type="submit">Delete</button>
+</form>-->
 
 <table matSort (matSortChange)="sortData($event)">
     <thead>
@@ -17,6 +22,8 @@
             <th mat-sort-header="description">Description</th>
             <th mat-sort-header="pages">Pages</th>
             <th mat-sort-header="authorId">AuthorId</th>
+            <th>Delete</th>
+            <th>Update</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +35,8 @@
             <td>{{book.description}}</td>
             <td>{{book.pages}}</td>
             <td>{{book.authorId}}</td>
+            <td><button type="button" (click)='deleteBook(book.id)'>Delete</button></td>
+            <td><button type="button" (click)='updateBook(book.id)'>Update</button></td>
         </tr>
     </tbody>
 </table>

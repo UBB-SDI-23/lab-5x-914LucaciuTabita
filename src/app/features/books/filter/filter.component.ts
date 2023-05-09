@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/common/service/services.api.service.service';
-import { Book } from '../components/overview/models/books.models';
+import { BookDTO } from '../components/overview/models/books.models';
 
 @Component({
   selector: 'app-filter',
@@ -9,13 +9,13 @@ import { Book } from '../components/overview/models/books.models';
 })
 export class FilterComponent {
   authorname?: string;
-  filteredBooks: Book[] = [];
+  filteredBooks: BookDTO[] = [];
 
   constructor(private apiSvc: ApiService) {}
   filterBooks(){
     if (this.authorname) {
       this.apiSvc.filterBooks(this.authorname).subscribe(
-        (books: Book[]) => {
+        (books: BookDTO[]) => {
           this.filteredBooks = books;
         },
         (error: any) => {

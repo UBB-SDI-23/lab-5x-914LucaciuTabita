@@ -1,0 +1,33 @@
+<h2>Libraries</h2>
+<button (click)="goToAddLibrary()">Add Library</button>
+<br><br>
+
+<button (click)="goToUpdateLibrary()">Update Library</button>
+<br><br>
+
+<table matSort (matSortChange)="sortData($event)">
+    <thead>
+        <tr>
+            <th mat-sort-header="id">Id</th>
+            <th mat-sort-header="name">Name</th>
+            <th mat-sort-header="city">City</th>
+            <th mat-sort-header="address">Address</th>
+            <th mat-sort-header="phoneNumber">PhoneNumber</th>
+            <th mat-sort-header="capacity">Capacity</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let library of libraries; let i = index">
+            <td><a routerLink="/libraries/{{library.id}}">{{library.id}}</a></td>
+            <td>{{library.name}}</td>
+            <td>{{library.city}}</td>
+            <td>{{library.address}}</td>
+            <td>{{library.phoneNumber}}</td>
+            <td>{{library.capacity}}</td>
+            <td><button type="button" (click)='deleteLibrary(library.id)'>Delete</button></td>
+            <td><button type="button" (click)='updateLibrary(library.id)'>Update</button></td>
+        </tr>
+    </tbody>
+</table>

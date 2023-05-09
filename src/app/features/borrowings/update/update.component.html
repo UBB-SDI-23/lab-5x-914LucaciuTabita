@@ -1,0 +1,24 @@
+<h2>Update Borrowing</h2>
+<form (ngSubmit)="updateBorrowing()" #updateForm="ngForm">
+  <label for="bookTitle">Book:</label>
+  <input disabled type="text" name="bookTitle" [(ngModel)]="borrowing.book.title" required>
+
+  <br><br>
+
+  <label for="libraryName">Library:</label>
+  <input disabled type="text" name="libraryName" [(ngModel)]="borrowing.library.name" required>
+
+  <br><br>
+
+  <label for="firstDate">FirstDate:</label>
+  <input type="text" name="firstDate" [(ngModel)]="borrowing.firstDate" required>
+
+  <br><br>
+
+  <label for="lastDate">LastDate:</label>
+  <input type="text" name="lastDate" [(ngModel)]="borrowing.lastDate" required>
+
+  <br><br>
+
+  <button type="submit">Update Borrowing</button>
+</form>

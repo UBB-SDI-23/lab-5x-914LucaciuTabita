@@ -27,7 +27,7 @@ export class AddComponent {
         authorId: this.authorId
       }
       this.apiSvc.addBook(book).subscribe(result => console.log(result));
-      alert("Succesfully added");
+      alert("Book succesfully added");
     }
   }
 }

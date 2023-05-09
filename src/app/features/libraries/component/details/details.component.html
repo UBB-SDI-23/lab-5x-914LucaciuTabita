@@ -1,0 +1,18 @@
+<ng-container *ngIf="library">
+    <h3>{{library.name}}</h3>
+    <ul>
+        <li><b>Id: </b>{{library.id}}</li>
+        <li><b>City: </b>{{library.city}}</li>
+        <li><b>Address: </b>{{library.address}}</li>
+        <li><b>PhoneNumber: </b>{{library.phoneNumber}}</li>
+        <li><b>Capacity: </b>{{library.capacity}}</li>
+        <br>
+        <ul *ngFor="let borrowing of library.borrowings; let i = index">
+            <li><b>BookId: </b>{{borrowing.bookId}}</li>
+            <li><b>LibraryId: </b>{{borrowing.libraryId}}</li>
+            <li><b>FirstDate: </b>{{borrowing.firstDate}}</li>
+            <li><b>LastDate: </b>{{borrowing.lastDate}}</li>
+            <br>
+        </ul>
+    </ul>
+</ng-container>
