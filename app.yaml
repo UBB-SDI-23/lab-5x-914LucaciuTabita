@@ -2,9 +2,6 @@ runtime: python27
 api_version: 1
 threadsafe: yes
 
-automatic_scaling:
-  max_file_size: 100M
-
 handlers:
   - url: /
     static_files: dist/my-app/index.html
