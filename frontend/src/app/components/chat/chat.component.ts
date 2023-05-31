@@ -16,6 +16,7 @@ export class ChatComponent implements OnInit{
     }
   );
   messages: MessageDTO[] = [];
+  summary: String | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,11 +24,22 @@ export class ChatComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+    this.chatService.getPreviousMessages().subscribe({
+      next: (messages) => {
+        this.messages = messages.reverse();
+      }
+    });
     this.chatService.onMessageObservable().subscribe({
       next: (messageDTO) => {
         this.messages.unshift(messageDTO);
       }
     })
+
+    this.chatService.getSummary().subscribe({
+      next: summary => {
+        this.summary = summary;
+      }
+    });
   }
 
   onSubmit() {

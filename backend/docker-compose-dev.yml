@@ -2,6 +2,8 @@ version: "3.9"
 services:
   database:
     image: "postgres:15.2"
+    ports:
+      - "5432:5432"
     volumes:
       - sdi-postgres:/var/lib/postgresql/data
     environment:
@@ -31,8 +33,12 @@ services:
       - update-to-tag
   ai:
     build: ../ai-microservice/
+    ports:
+      - "5000:5000"
   web:
     image: "tomcat:11.0"
+    ports:
+      - "8080:8080"
     depends_on:
       liquibase:
         condition: service_completed_successfully
@@ -41,7 +47,7 @@ services:
     env_file:
       - .env
     environment:
-      - spring.profiles.active=prod
+      - spring.profiles.active=dev
       - spring.datasource.password=${DATABASE_PASSWORD}
       - spring.datasource.username=${DATABASE_USERNAME}
       - spring.datasource.name=postgres=${DATABASE_PLATFORM}
