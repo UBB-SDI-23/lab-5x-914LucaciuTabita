@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/ubuntu/lab-5x-georgerapeanu/backend
+cd /home/ubuntu/lab-5x-914LucaciuTabita/backend
 
 if [ -f .env ] ; then
   source .env;
@@ -13,7 +13,7 @@ fi;
 git pull
 mkdir target;
 
-RELEASE_URL=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/UBB-SDI-23/lab-5x-georgerapeanu/releases/latest)
+RELEASE_URL=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/UBB-SDI-23/lab-5x-914LucaciTabita/releases/latest)
 PACKAGE_URL=$(echo $RELEASE_URL | sed -E "s/(\/tag)(\/[^/]*)$/\/download\2/")
 curl -sL --output ./target/sdi.war $PACKAGE_URL/sdi.war
 

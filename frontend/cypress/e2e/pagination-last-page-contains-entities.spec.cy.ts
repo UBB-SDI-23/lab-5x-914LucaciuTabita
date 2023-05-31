@@ -1,5 +1,5 @@
 describe('Test that the last page of pagination contains at least one entity', () => {
-  it('passes', () => {
+  it('passes', (cy) => {
     cy.visit('/users')
     cy.wait(3000);
     cy.get("app-pagination div .lastPageButton").click();
@@ -7,3 +7,22 @@ describe('Test that the last page of pagination contains at least one entity', (
     cy.get("table tbody tr").should('have.length.gt', 0);
   })
 })
+
+
+
+
+
+
+
+
+
+
+
+function it(passes: string, param2: (cy: any) => void) {
+
+}
+
+
+
+
+
